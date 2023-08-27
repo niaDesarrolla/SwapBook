@@ -21,6 +21,10 @@ const LibrosSchema = new Schema({
     type: String,
   },
 
+  imagenURL: {
+    type: String,
+  },
+
   activo: {
     type: Boolean,
     default: true, // campo para indicar si el libro está activo o no

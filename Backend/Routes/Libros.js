@@ -2,6 +2,7 @@ const { Router } = require('express');
 const router = Router();
 const { body } = require('express-validator');
 
+
 const { //importo los controladores 
   
   LibrosPost,
@@ -9,6 +10,7 @@ const { //importo los controladores
   LibrosPut,
   LibrosPatch,
   LibrosDelete,
+  
 } = require("../Controllers/Libros");
 
 //Aquí le envio información al serviidor (importamos) desde controllers 
@@ -16,9 +18,8 @@ router.get('/:id?',[
   // Validaciones con express-validator para el Get
   body('título').notEmpty().withMessage('El título no debe estar vacío'),
   body('autor').notEmpty().withMessage('El autorno debe estar vacía'),
+  
 ], LibrosGet); //ruta get para ver todos los usuarios
-
-//router.get('/saludo/:nombre/:apellido', medicamentosSaludo);  //le envio información al servidor por params (:) porque ya sabemos que solo necesitamos solo 2 parámetros especificos (nombre y apellido)
 
 router.post('/',[//ruta para agregar un nuevo usuario
 //validaciones con express-validator para el post

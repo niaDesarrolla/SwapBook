@@ -1,7 +1,7 @@
 const { Router } = require('express'); 
 const router = Router();
 const { body } = require('express-validator');
-const { confirm } = require('../Nodemailer/ConfirmEmail');
+
 
 const { //importo los controladores 
   
@@ -12,10 +12,10 @@ const { //importo los controladores
   UsuariosDelete,
 } = require("../Controllers/Usuarios");
 
+
+
 // Ruta para confirmar correo electrónico
-router.get('/confirm/:token',
-[],
-confirm);
+//router.get('/confirm/:token', confirm);
 
 //Aquí le envio información al serviidor (importamos) desde controllers 
 router.get('/:id?',[

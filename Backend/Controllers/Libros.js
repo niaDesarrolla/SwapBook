@@ -1,6 +1,7 @@
 
 const Libros = require('../Models/Libros');
 
+
 const LibrosGet = async (req, res) => {
   try {
     // Aquí realizo la lógica para buscar el usuario en la base de datos por su ID
@@ -21,7 +22,6 @@ const LibrosGet = async (req, res) => {
       if (!libros || libros.length === 0) {
         return res.status(404).json({ error: 'Libros no encontrados' });
       }
-
       //Devuelvo la información de todos los usuarios en la respuesta
       res.json(libros);
     }
@@ -31,6 +31,7 @@ const LibrosGet = async (req, res) => {
     res.status(500).json({ error: 'Error interno del servidor' });
   }
 };
+
 
 const LibrosPost = async (req, res) => { //Esta línea define la función UsuariosPost con los parámetros: req y res. 
   //esta función esta envuelta en un bloque trycatch,que permite manejar cualquier excepcion que pueda ocurrir durante la ejecución de la función. Si ocurre un error dentro del bloque try, se captura en el bloque catch, lo que evita que la aplicacion se bloquee y permita que se envié una respuesta adecuada al cliente
@@ -145,6 +146,7 @@ const LibrosPut = async (req, res) => {
     LibrosPut,
     LibrosDelete,
     LibrosPatch,
+
   };
 
 

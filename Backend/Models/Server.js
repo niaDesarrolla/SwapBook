@@ -42,6 +42,10 @@ class Server {
     this.app.use(this.usuariosPath, require("../Routes/Usuarios")); // configura las rutas de tu servidor para manejar las rutas relacionadas con los usuarios. Cada vez que una solicitud llega a una ruta que comienza con this.usuariosPath, el enrutador utilizará las definiciones de ruta contenidas en el archivo Usuarios.js para manejar la solicitud y enviar una respuesta adecuada.
     //El método use se utiliza para montar funciones de middleware en la ruta especificada. En otras palabras, es una forma de agregar funcionalidad a las rutas de tu servidor.
     this.app.use('/api/Libros', Libros);//está utilizando las rutas y controladores definidos en el archivo Libros.js
+
+     // Ruta para la API de Google Books
+     this.app.use('/api/ApiGoogleBooks', require('../Routes/ApiGoogleBooks'));
+
   }
 
   listen() {

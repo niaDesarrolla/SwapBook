@@ -1,5 +1,5 @@
 
-const {confirm} = require('../Nodemailer/ConfirmEmail');
+//const {confirm} = require('../Nodemailer/ConfirmEmail');
 const Usuario = require('../Models/Usuario');
 const {encriptarContraseña} = require('../Middlewares/BcryptUtils');
 const {AgregarLibroAUsuario} = require('../Controllers/LibrosUsuarios');
@@ -8,34 +8,34 @@ const {getTemplate, sendEmail} = require('../Nodemailer/MailConfig');
 const { v4: uuidv4 } = require('uuid');
 
 
+
 const UsuariosGet = async (req, res) => {
   try {
     // Aquí realizo la lógica para buscar el usuario en la base de datos por su ID
-    const usuarioId = req.params.id; //obtenemos el id del usuario de los paramétros de la URL
+    const usuarioId = await req.params.id; //obtenemos el id del usuario de los paramétros de la URL
+    
     if (usuarioId) { //si se proporciona Id buscamos el usuario eespecífico, pero si no, buscamos todos los usuarios
       const usuario = await Usuario.findById(usuarioId);
       // Utilizando el modelo Usuarios y su método de búsqueda por ID
+    
 
       if (!usuario) {
         return res.status(404).json({ error: 'Usuario no encontrado' });
       }
 
-      // Devuelvo la información del usuario encontrado en la respuesta
-      res.json(usuario);
+      res.json(usuario); // Enviar la información del usuario encontrado
     } else {
       const usuarios = await Usuario.find();
+    
+  
+        if (!usuarios || usuarios.length === 0) {
+          return res.status(404).json({ error: 'Usuarios no encontrados' });
+        }
 
-      //await confirm(req, res);
-
-      if (!usuarios || usuarios.length === 0) {
-        return res.status(404).json({ error: 'Usuarios no encontrado' });
-      }
-
-      //Devuelvo la información de todos los usuarios en la respuesta
+         //Devuelvo la información de todos los usuarios en la respuesta
       res.json(usuarios);
     }
-
-  } catch (error) {
+   } catch (error) {
     console.error('Error al obtener el usuario por ID:', error);
     res.status(500).json({ error: 'Error interno del servidor' });
   }
@@ -69,19 +69,11 @@ const UsuariosPost = async (req, res) => { //Esta línea define la función Usua
   const code = uuidv4();
   //Generar token
   const token = getToken ({email, code});
+
   //Obtener un template
   const template = getTemplate(nombre, token);
   //Enviar el email
   await sendEmail({usuario:email}, 'este es un email de prueba', template);
-   
-    //aqui iba ante usuario save
-  
-    // Llamada a la función confirm para confirmación de cuenta
-    const confirmResult = await confirm(email, code);
-
-    if (!confirmResult.success) {
-    return res.json(confirmResult);
-    }
 
   } catch (error) { // Si ocurre algún error durante el proceso de creación del usuario (por ejemplo, un error de validación o un problema con la base de datos), el control pasará al bloque catch y se capturará el error.
     console.error('Error al agregar el usuario:', error); //En caso de que ocurra un error, se envía una respuesta con un código de estado HTTP 500 (Error interno del servidor) y un mensaje de error genérico. Esto permite que el cliente sepa que ha ocurrido un problema en el servidor y proporciona información para el registro y depuración del error.

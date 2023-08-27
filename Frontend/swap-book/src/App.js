@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {BrowserRouter as Router, Routes, Route, link, } from 'react-router-dom'
+import Home from './Componentes/Home';
+import InicioDeSesion from './Componentes/InicioDeSesion';
+import Registro from './Componentes/Registro';
+import Buscar from './Componentes/Buscar';
+import NavBar from './Componentes/NavBar';
+import Footer from './Componentes/Footer';
+import Mensajeria from './Componentes/Mensajeria';
+import PerfilUsuario from './Componentes/PerfilUsuario';
+import LibrosRegistro from './Componentes/LibrosRegistro';
+import EditarContraseña from './Componentes/EditarContraseña';
+import BuscarLibro from './Componentes/BuscarLibro';
 
-function App() {
+
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router>
+      <NavBar/>
+
+    <Routes>
+
+    <Route path = '/Home' element = {<Home/>} />
+    <Route path="/InicioDeSesion" element={<InicioDeSesion />} />
+    <Route path="/Registro" element={<Registro />} />
+    <Route path="/Buscar" element={<Buscar />} />
+    <Route path="/Mensajeria" element={<Mensajeria />} />
+    <Route path="/PerfilUsuario" element={<PerfilUsuario/>}/>
+    <Route path="/LibrosRegistro" element={<LibrosRegistro/>}/>
+    <Route path="/EditarContraseña" element={<EditarContraseña/>}/>
+    <Route path="/BuscarLibro" element={<BuscarLibro/>}/>
+    </Routes>
+    <Footer/>
+  </Router>
   );
+
+ 
+
 }
 
 export default App;

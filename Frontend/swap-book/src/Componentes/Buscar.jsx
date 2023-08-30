@@ -4,6 +4,7 @@ import logo from '../Imagenes/logo.png';
 import { Container, Button } from 'react-bootstrap';
 import React, { useState } from 'react';
 import '../Styles/Buscar.css'
+import '../Styles/Global.css';
 
 const Buscar= () => {
   return (

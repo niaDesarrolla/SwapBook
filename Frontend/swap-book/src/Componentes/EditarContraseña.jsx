@@ -4,6 +4,7 @@ import { Container, Form, Button} from 'react-bootstrap';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRef } from 'react';
+import '../Styles/Global.css';
 
 const EditarContraseña = () => {
   const [email, setEmail] = useState('');

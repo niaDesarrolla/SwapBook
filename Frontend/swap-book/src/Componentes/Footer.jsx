@@ -2,6 +2,9 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import logo from '../Imagenes/logo.png';
 import '../Styles/Footer.css'
+import '../Styles/Global.css';
+
+
 const Footer = () => {
   return (
     <footer className="footer bg-white text-center py-4 align-items-center">
@@ -24,7 +27,7 @@ const Footer = () => {
           </Col>
           <Col>
             <div className="derechos d-flex justify-content-center align-items-center">
-              <p className="m-0">
+              <p className="texto-footer m-0">
                 Todos los derechos reservados, sitio creado por Niafiola Cartaya 08/2023
               </p>
             </div>

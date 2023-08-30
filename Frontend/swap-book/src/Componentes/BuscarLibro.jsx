@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Form, Button, Card } from 'react-bootstrap';
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../Styles/Global.css';
 
 const BuscarLibro = () => {
   const [idOrTitulo, setIdOrTitulo] = useState('');

@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
 import logo from '../Imagenes/logo.png';
 import NavBar from '../Componentes/NavBar';
+import '../Styles/Global.css';
 
 
 const Home=()=> {

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400&family=Montserrat+Alternates:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Roboto+Slab:wght@100;200;300;400&family=Roboto:ital,wght@0,300;0,400;1,100&display=swap');
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+
+p {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 100;
+    /* Thin */
+    font-style: thin;
+}
+
+btn{
+    font-family: 'Montserrat Alternates', sans-serif; 
+}

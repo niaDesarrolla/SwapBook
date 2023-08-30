@@ -4,6 +4,7 @@ import { NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../Imagenes/logo.png';
 import '../Styles/NavBar.css';
+import '../Styles/Global.css';
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

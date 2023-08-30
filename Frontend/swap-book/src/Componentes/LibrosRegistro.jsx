@@ -3,6 +3,7 @@ import { Container, Form, Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../Styles/Global.css';
 
 const LibrosRegistro = ({ addPostedBook }) => {
   const [titulo, setTitulo] = useState('');

@@ -13,6 +13,7 @@ import '../Styles/PerfilUsuario.css';
 import '../Styles/CarruselBuscar.css'
 import IntercambiarLibro from '../Componentes/IntercambiarLibro';
 import LibrosRegistro from '../Componentes/LibrosRegistro';
+import '../Styles/Global.css';
 
 
 const PerfilUsuario = () => {

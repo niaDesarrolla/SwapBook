@@ -72,6 +72,9 @@ const UsuariosPost = async (req, res) => { //Esta línea define la función Usua
 
   //Obtener un template
   const template = getTemplate(nombre, token);
+
+   // Enviar una respuesta al frontend
+  //  res.json({ mensaje: 'Usuario creado con éxito', usuario: usuarioNuevo });
   //Enviar el email
   await sendEmail({usuario:email}, 'este es un email de prueba', template);
 

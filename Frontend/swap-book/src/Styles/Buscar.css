@@ -1,0 +1,20 @@
+/* Estilos para los botones */
+.botones .btn {
+    background-color: gray; /* Color de fondo gris */
+    color: white; /* Texto en blanco */
+    border: none; /* Borde sin estilo */
+  }
+  
+  /* Estilos cuando el mouse se posiciona sobre los botones */
+  .botones .btn:hover {
+    background-color: #50ce19; /* Cambia el color de fondo a verde */
+    color: white; /* Texto en blanco */
+  }
+
+  .slogan {
+    color: rgba(3, 3, 3, 0.454);
+  }
+
+  .titulo{
+    color:  rgba(0, 0, 0, 0.753);
+  }

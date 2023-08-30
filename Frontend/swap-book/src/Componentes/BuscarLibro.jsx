@@ -22,10 +22,10 @@ const BuscarLibro = () => {
 
   return (
     <Container className="mt-5">
-      <h2 className="text-center">Buscar Libro por ID o Título</h2>
+      <h2 className="text-center">Busca un Libro por ID</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="idOrTitulo">
-          <Form.Label>Ingresa el ID o Título del libro</Form.Label>
+          <Form.Label>Ingresa el ID del libro</Form.Label>
           <Form.Control
             type="text"
             placeholder="Escribe aquí"

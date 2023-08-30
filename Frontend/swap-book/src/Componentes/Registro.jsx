@@ -24,6 +24,12 @@ const handleSubmit = async (event) => {
 
     // Aquí puedes manejar la respuesta del servidor si es necesario
 
+       // Restablecer los estados para borrar los campos
+       setNombre('');
+       setApellido('');
+       setEmail('');
+       setContraseña('');
+       
     // Redireccionar o mostrar un mensaje de éxito
   } catch (error) {
     console.error('Error al enviar el formulario:', error);
@@ -79,9 +85,6 @@ return (
           </Button>
       </Form>
     
-        <Link to="/buscar" className="btn btn-link mt-3">
-          Ir a la sección de búsqueda
-        </Link>
     </Container>
   </div>
 );

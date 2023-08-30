@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../Imagenes/logo.png';
+import '../Styles/NavBar.css';
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,19 +15,21 @@ function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white">
       <div className="container">
-      <div className="d-flex align-items-center">
-        <div className='Logo'>
+      <div className="d-flex justify-content-start align-items-center">
+        <div className='Logo text-center mt-3'>
         
                 <img
                   src={logo}
                   alt="Logo"
                   height="50" // Ajusta el tamaño aquí
                 />
-        </div>
-        </div>
-        <div className='Textologo d-inline'>
+        <div className='TextologoNav'>
         <h6 className="text-success">SwapBook</h6>
         </div>
+        </div>
+        </div>
+       
+       
         <button
           className={`navbar-toggler ${isMenuOpen ? '' : 'collapsed'}`}
           type="button"
@@ -37,7 +40,7 @@ function NavBar() {
         </button>
         <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <NavDropdown title="Opciones" id="basic-nav-dropdown">
+            <NavDropdown title="Opciones" id="basic-nav-dropdown" className= "mi-menu">
               <NavDropdown.Item as={Link} to="/PerfilUsuario">
                 Mi perfil
               </NavDropdown.Item>

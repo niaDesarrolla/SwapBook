@@ -2,9 +2,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
 import logo from '../Imagenes/logo.png';
-import { Container } from 'react-bootstrap';
 import React from 'react';
-import '../Styles.css/Home.css';
+import '../Styles/Home.css';
 
 
 const Home=()=> {
@@ -14,24 +13,24 @@ const Home=()=> {
   
     {/* Main */}
     <div className="SwapBook text-center">
-        <h1>SwapBook</h1>
+        <h1 className='titulo'>SwapBook</h1>
     </div>
     <div className="container mt-5">
-    <div className="row">
+    <div className="row align-items-center">
       <div className="col-md-6">
-        <img src={logo} alt="Logo" className="img-fluid" style={{ height: '400px'}} />
+        <img src={logo} alt="Logo" className="logo img-fluid" style={{ height: '300px'}} />
       </div>
-      <div className="col-md-6 d-flex align-items-center justify-content-center">
+     
+     <div className="col-md-6 d-flex flex-column align-items-center ">
+     <div className="botones mb-2">
       <Link to="/InicioDeSesion" className="btn btn-primary me-2">Iniciar sesión</Link>
       <Link to="/Registro" className="btn btn-secondary">Registrarse</Link>
       </div>
-    </div>
-    <div className="row mt-3">
-      <div className="col-md-12 text-end">
-        <h3>You have a book for someone, <br /> 
-          and someone has a book for you</h3>
+      <h3 className='slogan text-center mt-2'>You have a book for someone, <br /> 
+          and someone has a book for you!</h3>
       </div>
     </div>
+  
   </div>
   </div>
   

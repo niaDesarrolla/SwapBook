@@ -1,13 +1,14 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Form, Button} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useRef } from 'react';
 
 const EditarContraseña = () => {
   const [email, setEmail] = useState('');
   const [contraseña, setContraseña] = useState('');
+  const formRef = useRef(null); 
 
 const handleSubmit = async (event) => {
   event.preventDefault();
@@ -22,18 +23,22 @@ const handleSubmit = async (event) => {
     // Aquí puedes manejar la respuesta del servidor si es necesario
 
     // Redireccionar o mostrar un mensaje de éxito
+    formRef.current.reset();
+    setEmail(''); // Restablece el estado email
+    setContraseña(''); // Restablece el estado contraseña
   } catch (error) {
     console.error('Error al enviar el formulario:', error);
-   
   }
 };
   
+  // Recargar el formulario usando la referenci
+
   return (
     <div className="EditarContraseña">
       
         <Container className="mt-5">
       <h2 className="text-center">Cambia tu contraseña</h2>
-      <Form onSubmit= {handleSubmit}>
+      <Form onSubmit= {handleSubmit}  ref={formRef}> 
         <Form.Group className="mb-3" controlId="nombre">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -47,7 +52,7 @@ const handleSubmit = async (event) => {
           <Form.Label>Contraseña nueva</Form.Label>
           <Form.Control 
           type="text"
-           placeholder="Ingrese su apellido" 
+           placeholder="Ingrese su acontraseña" 
            value={contraseña}
           onChange={(e) => setContraseña(e.target.value)}
            />

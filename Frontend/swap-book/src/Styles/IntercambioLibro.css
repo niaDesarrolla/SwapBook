@@ -1,0 +1,6 @@
+.boton-registro:not(:hover){ 
+    background-color: gray;
+ }
+ .boton-registro:hover { 
+    background-color:  #50ce19;
+ }

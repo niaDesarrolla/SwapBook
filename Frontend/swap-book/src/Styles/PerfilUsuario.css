@@ -1,0 +1,58 @@
+
+.PerfilUsuario{
+    margin-right: 50px;
+}
+
+
+.mb-3.carrusel-derecha{
+    height: 300px;
+    width: 600px;
+}
+
+.mb-3.izquierda{
+    height: 250px;
+    width: 350px;
+}
+.mt-3.carrusel-derecha{
+   
+    width: 200px; 
+}
+.link-button {
+    color: white; 
+    text-decoration: none; 
+  }
+.comunidad{
+    margin-top: 50px;
+}
+
+.mensaje{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.boton-buscar:not(:hover)
+ { background-color: gray;
+ }
+
+ .boton-buscar:hover { 
+    background-color:  #50ce19;
+ }
+
+ .boton-enviar:not(:hover){ 
+    background-color: gray;
+ }
+ .boton-enviar:hover { 
+    background-color:  #50ce19;
+ }
+
+
+ .carrusel{
+    margin-right: 10px;
+}
+
+.Nombre{
+    margin-left: 1px;
+  
+    margin-top: 60px;
+}
+

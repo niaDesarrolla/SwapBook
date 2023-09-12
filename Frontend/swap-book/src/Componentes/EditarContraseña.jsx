@@ -16,7 +16,7 @@ const handleSubmit = async (event) => {
 
   //  lógica para enviar los datos al backend
   try {
-    const backendResponse = await axios.patch("http://localhost:8085/api/usuarios", {
+    const backendResponse = await axios.patch("https://swap-book-six.vercel.app/api/usuarios", {
       email: email,
       contraseña: contraseña,
     });

@@ -12,7 +12,7 @@ const BuscarLibro = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.get(`http://localhost:8085/api/libros/${idOrTitulo}`);
+      const response = await axios.get(`https://swap-book-six.vercel.app/api/libros/${idOrTitulo}`);
 
       setLibroEncontrado(response.data);
     } catch (error) {

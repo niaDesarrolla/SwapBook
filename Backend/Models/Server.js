@@ -28,7 +28,14 @@ class Server {
   middlewares() {
     //Estos middlewares serán ejecutados antes de que las solicitudes lleguen a las rutas
     //CORS
-    this.app.use(cors());
+    this.app.use(cors(
+
+      {
+        origin:['https://swap-book-six.vercel.app/', 'http://localhost:8085'], // Cambia esto por la URL de tu frontend
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+        credentials: true,
+    }));
+    
 
     //Lectura y parseo del body
     this.app.use(express.json()); 

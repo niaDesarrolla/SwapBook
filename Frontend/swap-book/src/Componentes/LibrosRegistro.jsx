@@ -13,13 +13,19 @@ const LibrosRegistro = ({ addPostedBook }) => {
   const [envioExitoso, setEnvioExitoso] = useState(false);
   const [mensajeExito, setMensajeExito] = useState('');
 
+  const isProduction = process.env.NODE_ENV === 'production'
+  const apiUrl = isProduction
+  ? process.env.REACT_APP_BACKEND_URL // URL de producción en Vercel
+  : 'http://localhost:8085'; // URL local en desarrollo
+  // URL local en desarrollo
+  
   //  Llamada a la función addPostedBook después de recibir la respuesta del servidor
 const handleSubmit = async (event) => {
   event.preventDefault();
 
   //  lógica para enviar los datos al backend
   try {
-    const response = await axios.post("https://swap-book-six.vercel.app/api/libros", {
+    const response = await axios.post(`${apiUrl}/api/libros`, {
       titulo,
       autor,
       edicion,

@@ -5,6 +5,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../Styles/Global.css';
 
+
+  const isProduction = process.env.NODE_ENV === 'production'
+  const apiUrl = isProduction
+  ? process.env.REACT_APP_BACKEND_URL // URL de producción en Vercel
+  : 'http://localhost:8085'; // URL local en desarrollo
+  // URL local en desarrollo
+
 const Registro = () => {
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
@@ -16,7 +23,7 @@ const handleSubmit = async (event) => {
 
   //  lógica para enviar los datos al backend
   try {
-    const backendResponse = await axios.post("https://swap-book-six.vercel.app/api/usuarios", {
+    const backendResponse = await axios.post(`${apiUrl}/api/usuarios`, {
       nombre,
       apellido,
       email,

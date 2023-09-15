@@ -16,6 +16,13 @@ import LibrosRegistro from '../Componentes/LibrosRegistro';
 import '../Styles/Global.css';
 
 
+const isProduction = process.env.NODE_ENV === 'production'
+  const apiUrl = isProduction
+  ? process.env.REACT_APP_BACKEND_URL // URL de producción en Vercel
+  : 'http://localhost:8085'; // URL local en desarrollo
+  // URL local en desarrollo
+
+  
 const PerfilUsuario = () => {
 
   // Estados y funciones relacionados con la búsqueda y publicación
@@ -59,7 +66,7 @@ const PerfilUsuario = () => {
   const handleSearchSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.get(`https://swap-book-six.vercel.app/api/ApiGoogleBooks/books/title`, {
+      const response = await axios.get(`${apiUrl}/api/ApiGoogleBooks/books/title`, {
         params: {
           title: searchTerm  // Utiliza el término de búsqueda actual aquí
         }

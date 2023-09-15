@@ -14,9 +14,15 @@ const EditarContraseña = () => {
 const handleSubmit = async (event) => {
   event.preventDefault();
 
+  const isProduction = process.env.NODE_ENV === 'production'
+const apiUrl = isProduction
+  ? process.env.REACT_APP_BACKEND_URL // URL de producción en Vercel
+  : 'http://localhost:8085'; // URL local en desarrollo
+  // URL local en desarrollo
+
   //  lógica para enviar los datos al backend
   try {
-    const backendResponse = await axios.patch("https://swap-book-six.vercel.app/api/usuarios", {
+    const backendResponse = await axios.patch(`${apiUrl}/api/usuarios`, {
       email: email,
       contraseña: contraseña,
     });

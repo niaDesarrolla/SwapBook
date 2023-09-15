@@ -14,11 +14,17 @@ const [searchResults, setSearchResults] = useState([]);
 const [showResults, setShowResults] = useState(false);
 const [successMessage, setSuccessMessage] = useState("");
 
+const isProduction = process.env.NODE_ENV === 'production'
+const apiUrl = isProduction
+  ? process.env.REACT_APP_BACKEND_URL // URL de producción en Vercel
+  : 'http://localhost:8085'; // URL local en desarrollo
+  // URL local en desarrollo
+
 
 const handlePostBook = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("https://swap-book-six.vercel.app/api/libros", {
+      const response = await axios.post(`${apiUrl}/api/libros`, {
         // Datos para enviar al backend
         titulo: "Titulo del libro",
         autor: "Autor del libro",

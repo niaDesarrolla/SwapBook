@@ -11,8 +11,16 @@ const BuscarLibro = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+
+const isProduction = process.env.NODE_ENV === 'production'
+const apiUrl = isProduction
+  ? process.env.REACT_APP_BACKEND_URL // URL de producción en Vercel
+  : 'http://localhost:8085'; // URL local en desarrollo
+  // URL local en desarrollo
+
+
     try {
-      const response = await axios.get(`https://swap-book-six.vercel.app/api/libros/${idOrTitulo}`);
+      const response = await axios.get(`${apiUrl}/api/libros/${idOrTitulo}`);
 
       setLibroEncontrado(response.data);
     } catch (error) {

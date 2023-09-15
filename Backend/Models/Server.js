@@ -18,7 +18,7 @@ class Server {
        this.conectarDB();//Llama al método conectarDB(), que se encarga de establecer la conexión con la base de datos.
       
   }
-//va a disparra adentro la funcion DB conection de la hoja database.js
+//va a disparar adentro la funcion DB conection de la hoja database.js
 
   async conectarDB(){//hago la función que se ejecuta cando se instancia la case server
     await dbConnection();
@@ -31,7 +31,7 @@ class Server {
     this.app.use(cors(
 
       {
-        origin:['https://swap-book-six.vercel.app/', 'http://localhost:8085'], // Cambia esto por la URL de tu frontend
+        origin:['https://swap-book-six.vercel.app/', 'http://localhost:8085'], 
         methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
         credentials: true,
     }));

@@ -47,7 +47,7 @@ const LibrosPost = async (req, res) => { //Esta línea define la función Usuari
       estado: estado,
       librosId: librosId
     }); //Se crea una nueva instancia del modelo de datos "Usuario" utilizando los datos almacenados en nuevoUsuario. Esto se asume que el modelo "Usuario" se define y se importa previamente en el archivo que contiene la función.
-    
+     console.log('guardando libro,', LibrosNuevo)
   
     // Guarda el usuario en la base de datos
     await LibrosNuevo.save(); //Se utiliza el método save() para guardar el nuevo usuario en la base de datos. Este método es asincrónico, por lo que se espera la resolución de la promesa utilizando await.

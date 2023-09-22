@@ -76,6 +76,8 @@ const PerfilUsuario = () => {
       setShowResults(true);
     } catch (error) {
       console.error('Error al buscar el libro:', error);
+
+      console.log('URL de la API:', apiUrl);
     }
   };
 

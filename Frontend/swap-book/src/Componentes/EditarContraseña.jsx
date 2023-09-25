@@ -19,7 +19,7 @@ const apiUrl = isProduction
   ? process.env.REACT_APP_BACKEND_URL // URL de producción en Vercel
   : 'http://localhost:8085'; // URL local en desarrollo
   // URL local en desarrollo
-
+console.log("REACT_APP_BACKEND_URL", "http://localhost:8085", "isprod?", isProduction, apiUrl);
   //  lógica para enviar los datos al backend
   try {
     const backendResponse = await axios.patch(`${apiUrl}/api/usuarios`, {

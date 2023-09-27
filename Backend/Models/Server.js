@@ -29,7 +29,7 @@ class Server {
     //Estos middlewares serán ejecutados antes de que las solicitudes lleguen a las rutas
     //CORS
     this.app.use(cors({
-        origin:['https://swap-book-9nzi.vercel.app/', 'https://swap-book-eta.vercel.app/', 'http://localhost:8085', 'http://localhost:3000'], 
+        origin:['https://swap-book-9nzi.vercel.app', 'https://swap-book-eta.vercel.app', 'http://localhost:8085', 'http://localhost:3000'], 
         methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
         credentials: true,
     }));

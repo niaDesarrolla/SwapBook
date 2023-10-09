@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Form, Button, Card } from 'react-bootstrap';
 import React, { useState } from 'react';
-//import axios from 'axios';
+import axios from 'axios';
 import '../Styles/Global.css';
 
 const BuscarLibro = () => {
@@ -21,15 +21,9 @@ const apiUrl = isProduction
 
     try {
       //agregarle la cabecera de la petición headers 
-      const response = await fetch(`${apiUrl}/api/libros/${idOrTitulo}`);
+      const response = await axios.get(`${apiUrl}/api/libros/${idOrTitulo}`);
 
-      if (response.ok) {
-        const data = await response.json();
-      setLibroEncontrado(data);
-    } else {
-      console.error('Error al buscar el libro:', response.statusText);
-      setLibroEncontrado(null);
-    }
+      setLibroEncontrado(response.data);
     } catch (error) {
       console.error('Error al buscar el libro:', error);
       setLibroEncontrado(null);

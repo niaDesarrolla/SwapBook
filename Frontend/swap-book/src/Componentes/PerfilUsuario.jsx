@@ -8,7 +8,7 @@ import retrato from '../Imagenes/retrato.jpg';
 import persona from '../Imagenes/persona.jpg';
 import imagen from '../Imagenes/imagen.jpg';
 import usuario from '../Imagenes/usuario.jpg';
-import axios from 'axios';
+//import axios from 'axios';
 import '../Styles/PerfilUsuario.css';
 import '../Styles/CarruselBuscar.css'
 import IntercambiarLibro from '../Componentes/IntercambiarLibro';
@@ -66,17 +66,17 @@ const PerfilUsuario = () => {
   const handleSearchSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.get(`${apiUrl}/api/ApiGoogleBooks/books/title`, {
-        params: {
-          title: searchTerm  // Utiliza el término de búsqueda actual aquí
-        }
-      });
-      console.log('Resultados de la búsqueda:', response.data);
-      setSearchResults(response.data);
+      const response = await fetch(`${apiUrl}/api/ApiGoogleBooks/books/title?title=${searchTerm}`);
+        if (response.ok) {
+          const data = await response.json();
+      console.log('Resultados de la búsqueda:', data);
+      setSearchResults(data);
       setShowResults(true);
+    } else {
+      console.error('Error al buscar el libro:', response.statusText);
+    }
     } catch (error) {
       console.error('Error al buscar el libro:', error);
-
       console.log('URL de la API:', apiUrl);
     }
   };
